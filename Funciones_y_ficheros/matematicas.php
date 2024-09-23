@@ -1,26 +1,38 @@
 <?php
 
-
-function digitos(int $num): int{
+function digitos(int $num){
     echo"Devuelve la longitud de los digitos ";
-    return strlen($num);
+    echo strlen($num);
+    echo "<br>";
 }
 
+function digitosN(int $num, int $cant){
+    echo "Devuelve la posicion del numero que le des ";
+    echo substr($num, $cant-1, 1);
+
+}
+
+function quitarPorDetras(int $num, int $cant){
+        echo "<br>";
+        echo "Quitar por detrás ";
+        $cad = (string) $num;
+        $res = substr($cad, 0, -$cant);
+        echo (int) $res;    
+}
+
+function quitarPorDelante(int $num, int $cant) {
+    echo "<br>";
+    echo "Quitar por delante ";
+    $cad = (string) $num;
+    $res = substr($cad, $cant);
+    echo (int) $res;
+}
 
 echo digitos(555455);
 
-function digitosN(int $num, int $cant): int{
-    echo "<br>";
-    echo "Devuelve la posicion del numero que le des ";
-    return substr($num, $cant-1, 1);
-
-}
 echo digitosN(555455, 4);
-
-function quitarPorDetras(int $num, int $cant){
-    return substr_replace($num, -$cant);
-}
 
 echo quitarPorDetras(555455, 4);
 
+echo quitarPorDelante(123456789, 2);
 ?>
