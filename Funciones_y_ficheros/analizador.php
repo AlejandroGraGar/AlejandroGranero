@@ -5,7 +5,7 @@ function analizaFrase($frase) {
     $total_letras = strlen(str_replace(" ", "", $frase));
     $cant_palabras = count($palabras);
     
-    echo "Letras totales: $total_letras\n";
+    echo "Total de letras: $total_letras\n";
     echo "Cantidad de palabras: $cant_palabras\n";
     
     foreach ($palabras as $palabra) {
