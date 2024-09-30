@@ -26,21 +26,7 @@ if (($fich = fopen($fichero, 'r')) !== false) {
 } else {
     echo "Error al abrir el archivo.";
 }
-
-echo "<table border='1'>";
-echo "<tr><th>Dorsal</th><th>Nombre</th><th>Apellidos</th><th>Posición</th><th>Equipo</th></tr>";
-
-foreach ($atleticoData as $jugador) {
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($jugador['Dorsal']) . "</td>";
-    echo "<td>" . htmlspecialchars($jugador['Nombre']) . "</td>";
-    echo "<td>" . htmlspecialchars($jugador['Apellidos']) . "</td>";
-    echo "<td>" . htmlspecialchars($jugador['Posición']) . "</td>";
-    echo "<td>" . htmlspecialchars($jugador['Equipo']) . "</td>";
-    echo "</tr>";
-}
-
-echo "</table>";
+include "plantillas_view.php";
 ?>
 
 

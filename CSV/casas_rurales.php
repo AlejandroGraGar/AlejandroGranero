@@ -2,7 +2,7 @@
 $archivo = 'casas_rurales.csv';
 
 $casas = [];
-$casas_del = 0;
+$cont = 0;
 
 if (($arch = fopen($archivo, 'r')) !== FALSE) {
     $encabezado = fgetcsv($arch, 1000, ";");
@@ -11,7 +11,7 @@ if (($arch = fopen($archivo, 'r')) !== FALSE) {
         $id = $datos[0];
         $localidad = $datos[1];
         $nombre = $datos[3];
-        $telefono = $datos[8];
+        $telefono = $datos[9];
 
         if (!empty($telefono)) {
             $casas[] = [
@@ -21,7 +21,7 @@ if (($arch = fopen($archivo, 'r')) !== FALSE) {
                 'telefono' => $telefono
             ];
         } else {
-            $casas_del++;
+            $cont++;
         }
     }
 
@@ -31,7 +31,7 @@ if (($arch = fopen($archivo, 'r')) !== FALSE) {
     exit;
 }
 
-echo "<table border='1' cellpadding='5' cellspacing='0'>";
+echo "<table border='1'>";
 echo "<tr><th>ID</th><th>Localidad</th><th>Nombre</th><th>Teléfono</th></tr>";
 
 foreach ($casas as $casa) {
@@ -45,5 +45,5 @@ foreach ($casas as $casa) {
 
 echo "</table>";
 
-echo "<p>Total de casas descartadas: $casas_del</p>";
+echo "<p>Total de casas descartadas: $cont</p>";
 ?>
