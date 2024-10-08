@@ -20,4 +20,4 @@ echo "<td> " . $res_mult. "</td>";
 echo "<td> " . $res_div. "</td>";
 echo "</tr>";
 echo "</table>"
-?>
+?>  
