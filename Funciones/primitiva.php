@@ -18,7 +18,7 @@ $nums = getNums(6, 1, 49);
     <div class="container mt-5 ">
         <div class="card">
             <div class="card-header text-center bg-info">
-                <h2>Apuesta de Euromillones</h2>
+                <h2>Apuesta de Primitiva</h2>
             </div>
             <div class="card-body "> 
                <?php mostrar($nums);?>
