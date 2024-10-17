@@ -1,3 +1,4 @@
+<img src="./img/array1.png">
 <?php
 $lista = array();
 

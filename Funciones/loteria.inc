@@ -3,7 +3,7 @@
 function getNums($cant, $min, $max) {
     $nums = [];
     while (count($nums) < $cant) {
-        $num = rand($min, $max);
+       $num = rand($min, $max);
         if (!in_array($num, $nums)) {
             $nums[] = $num;
         }
