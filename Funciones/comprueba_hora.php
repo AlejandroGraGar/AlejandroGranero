@@ -13,10 +13,12 @@ function comprueba_hora(string $hora) :void{
 
     if ($horas > 24 || $minutos > 59 || $segundos > 59){
         echo("Formato de fecha invalido");
+    } else {
+        echo "Hora:" . $horas ." Minutos: " .$minutos . " Segundos: ". $segundos;
     }
 
 
 
 }
 
-comprueba_hora("12:25:60");
+comprueba_hora("12:25:59");

@@ -14,5 +14,5 @@ function analizaFrase($frase) {
 }
 
 $frase = "Esto es una frase de prueba";
-analizarFrase($frase);
+analizaFrase($frase);
 ?>

@@ -8,9 +8,8 @@
 <body>
 <?php
     echo "Usuario y contraseña correctos";
-    header("Refresh:1; url=formulario.html");
+    header("Refresh:5; url=formulario.html");
     exit();
 ?>
 </body>
 </html>
-

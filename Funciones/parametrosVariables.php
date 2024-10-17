@@ -12,7 +12,7 @@ function mayor(): int{
         }
     }
 
-echo($mayor);
+echo("El mayor es ".$mayor);
 }
 
 
