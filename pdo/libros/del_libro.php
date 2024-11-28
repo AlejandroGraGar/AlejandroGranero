@@ -1,24 +1,34 @@
 <?php
-require_once "task.php"; 
+require_once "conexion.php";
 
-if (isset($_POST['libro_id'])) {
-    $libro_id = $_POST['libro_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        $pdo = conectaDb();
 
-    
-    $pdo = conectaDb();
+        if (!isset($_POST['libro_id'])) {
+            echo "No se especificó el ID del libro.";
+            exit();
+        }
 
-    
-    $sql = "DELETE FROM task WHERE id = :id";
-    $stmt = $pdo->prepare($sql);
+        $libro_id = $_POST['libro_id'];
 
-    
-    $stmt->execute(['id' => $libro_id]);
+        $delete_sql = "DELETE FROM task WHERE id = :id";
+        $delete = $pdo->prepare($delete_sql);
 
-    
+        $delete->bindParam(':id', $libro_id, PDO::PARAM_INT);
 
+        if ($delete->execute()) {
+            header("Location: listar.php");
+            exit();
+        } else {
+            echo "Error al eliminar el libro.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    } finally {
+        $pdo = null;
+    }
 } else {
-    echo "No se recibió el ID del libro para eliminar.";
+    echo "Método de solicitud no permitido.";
 }
-
-$pdo = null;
-header("Location:inicio.php");
+?>
