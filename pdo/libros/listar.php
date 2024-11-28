@@ -26,7 +26,7 @@ foreach ($libros as $libro) {
     echo "<td>
             <form method='POST' action='del_libro.php'>
                 <input type='hidden' name='libro_id' value='" . htmlspecialchars($libro['id']) . "'>
-                <button type='submit' class='delete-button'>Eliminar</button>
+                <button type='submit' class='delete-button'></button>
             </form>
             <form method='POST' action='modifica.php'>
                 <input type='hidden' name='libroupd_id' value='" . htmlspecialchars($libro['id']) . "'>
