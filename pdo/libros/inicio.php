@@ -1,4 +1,16 @@
-<?php include_once("header.php"); ?>
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+    header("Location: login.php");
+    exit;
+}
+$usuario = $_SESSION['usuario'];
+
+?>
+
+<h1>Bienvenidooooo <?php echo $usuario;?></h1>
+
+<a href="logout.php">Log out</a>
 
     <form method="POST" action="inser_libros.php">
         <h3>Agregar un libro</h3>
