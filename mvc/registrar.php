@@ -29,11 +29,11 @@
                 <form action="controllers/userController.php?action=addUser" method="POST">
                     <div class="mb-3">
                         <label for="new_username" class="form-label">Usuario</label>
-                        <input type="text" name="username" id="new_username" class="form-control" placeholder="Introduce un nuevo usuario" required>
+                        <input type="text" name="new_username" id="new_username" class="form-control" placeholder="Introduce un nuevo usuario" required>
                     </div>
                     <div class="mb-3">
                         <label for="new_password" class="form-label">Contraseña</label>
-                        <input type="password" name="password" id="new_password" class="form-control" placeholder="Introduce una contraseña" required>
+                        <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Introduce una contraseña" required>
                     </div>
                     <button type="submit" class="btn btn-success w-100">Crear Usuario</button>
                 </form>

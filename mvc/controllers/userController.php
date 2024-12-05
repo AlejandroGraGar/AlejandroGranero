@@ -5,11 +5,13 @@ class UserController {
     private $userModel;
 
     public function __construct() {
-        $this->userModel = new Users();
+        $usu = $_POST['new_username'];
+        $pass = $_POST['new_password'];
+        $this->userModel = new Users($usu, $pass);
     }
 
     public function addUser($usu, $pass) {
-        return $this->userModel->addUser($usu, $pass);
+        $this->userModel->addUser($usu, $pass);
     }
 
     public function compruebaLogin() {

@@ -10,7 +10,7 @@ class Users {
     }
     public function addUser($username, $pass) {
         $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO usuarios (username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO usuarios (id, user, password) VALUES (NULL,:username, :password)";
     
         try {
             $stmt = $this->db->prepare($sql);
