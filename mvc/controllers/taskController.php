@@ -44,8 +44,8 @@
             header("Location: index.php");
         }
         
-        public function update($id){
-            $this->taskModel->delete($id);
+        public function update($id, $titu, $desc){
+            $this->taskModel->update($id, $titu, $desc);
             header("Location: index.php");
         }
     }

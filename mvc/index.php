@@ -21,27 +21,26 @@ require_once "controllers/taskController.php";
         $index->delete($id);
     } elseif ($action == "create"){
         $index->create();
-    } elseif ($action == "update"){
-        $index->index();
-    }
+    } 
+        
+    
 ?>
     <div class="container mt-5">
-        <h1>Task Controller Actions</h1>
+        <h1>Gestion de libros</h1>
         <div class="list-group">
             <a href="?action=create" class="list-group-item list-group-item-action">
-                Create Task
+                Create libro
             </a>
-            <a href="?action=edit&id=1" class="list-group-item list-group-item-action">
-                Edit Task 
-            </a>
-            <a href="?action=delete&id=1" class="list-group-item list-group-item-action text-danger">
-                Delete Task 
-            </a>
+            
             <a href="?action=update" class="list-group-item list-group-item-action">
-                Update Task List
+                Edit/delete libros
             </a>
         </div>
-
+        <?php
+            $index = new taskController;
+            $index->index();
+        
+        ?>
     </div>
 
 </body>
