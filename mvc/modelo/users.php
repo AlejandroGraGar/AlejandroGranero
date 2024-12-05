@@ -8,6 +8,26 @@ class Users {
         $conexion = new ConexionUser();
         $this->db = $conexion->conectar();
     }
+    public function addUser($username, $pass) {
+        $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO usuarios (username, password) VALUES (:username, :password)";
+    
+        try {
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':password', $pass);
+    
+            if ($stmt->execute()) {
+                return true; 
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            error_log("Error al insertar el usuario: " . $e->getMessage()); 
+            return false; 
+        }
+    }
+    
 
     public function compruebaLogin($username, $password) {
         try {
